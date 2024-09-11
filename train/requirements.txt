@@ -1,0 +1,8 @@
+tqdm
+numpy
+torch
+transformers==4.33.0
+datasets
+einops
+jsonlines
+sentencepiece

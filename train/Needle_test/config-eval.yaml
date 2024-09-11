@@ -1,0 +1,14 @@
+pred_dir: 'pred'
+save_dir: 'results'
+
+
+# split_flag: '1111' # only need for 7b-1k-100k
+split_falg: '0' # used for others 
+
+model:
+  model_provider: "OpenAI"
+  model_name: "gpt-4"
+
+prompt:
+  needle: "\nThe best thing to do in San Francisco is eat a sandwich and sit in Dolores Park on a sunny day.\n"
+  retrieval_question: "What is the best thing to do in San Francisco?"

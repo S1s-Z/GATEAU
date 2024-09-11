@@ -1,0 +1,10 @@
+You are asked to evaluate the quality of the AI assistant’s answers to user question as an impartial judge, and your evaluation should take into account factors including correctness (high priority), and comprehensiveness (whether the assistant’s answer covers all points). 
+Read the AI assistant’s answer and compare against the reference answer, and give an overall integer rating in 1, 2, 3 (1 = wrong or irrelevant, 2 = partially correct, 3 = correct and comprehensive) based on the above principles, strictly in the following format:"[[rating]]", e.g. "[[2]]".
+
+Question:
+{}
+Reference answer:
+{}
+Assistant’s answer:
+{}
+Rating: 

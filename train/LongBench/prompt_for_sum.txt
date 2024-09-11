@@ -1,0 +1,8 @@
+You are asked to evaluate the quality of the AI assistant’s generated summary as an impartial judge, and your evaluation should take into account factors including correctness (high priority), comprehensiveness (whether the assistant’s summary covers all points), and coherence. 
+Read the AIassistant’s summary and compare against the reference summary, and give an overall integer rating in on a scale of 1 to 5, where 1 is the lowest and 5 is the highest based on the evaluation criteria, strictly in the following format:"[[rating]]", e.g. "[[3]]".
+
+Reference summary:
+{}
+Assistant’s summary:
+{}
+Rating:

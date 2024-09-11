@@ -1,0 +1,104 @@
+prompt_dir: 'prompts'
+save_dir: '1k-100k-final-2000-pred'
+
+
+
+
+# # 1k ntk limited settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-1k-10k-ntk"
+
+# # 3k ntk limited settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-3k-10k-ntk"
+
+  # 5k ntk limited settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-5k-10k-ntk"
+
+
+# 1k ntk real-world settings 2000
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-1k-100k-ntk/checkpoint-2000"
+
+# 1k nonorm-2000step real-world settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-1k-100k-ntk-nonorm/checkpoint-2000"
+
+
+# # 1k final real-world settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/no-ntk/1k_ppl_align_82_7B_sorted_share_100k"
+
+# 1k ntk norm real-world settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-1k-100k-ntk-nonorm"
+
+# 1k ntk real-world settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-1k-100k-ntk"
+
+# 3k ntk real-world settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-3k-100k-ntk"
+
+# #   5k ntk real-world settings 
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/7b-5k-100k-ntk"
+
+
+# longalign-7b real-world settings
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/models/models--THUDM--LongAlign-7B-64k/snapshots/24038a83d41c1a343d8fdb8adabbc9ceb28002a5"
+
+# longalign-7b limited settings
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/10k_10k/checkpoint-400"
+
+# # ours 5k limited settings
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/5k_ppl_align_73_7B_sorted_share_10k_fixed/checkpoint-400"
+
+# #ours 3k limited settings
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/3k_ppl_align_73_7B_sorted_share_10k_re/checkpoint-400"
+
+# # ours 1k limited settings
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/1k_ppl_align_73_7B_sorted_share_10k/checkpoint-400"
+
+# # ours 5k real-world settings
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/5k_ppl_align_82_7B_sorted_share_100k_naive/checkpoint-2000"
+
+# # ours 3k real-world settings
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/3k_ppl_align_82_7B_sorted_share_100k/checkpoint-2000"
+
+# ours 1k real-world settings
+model:
+  model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+  model_name: "/mnt/public/shuzhengsi/ppl/LongAlign/output/llama/1k_ppl_align_82_7B_sorted_share_100k/checkpoint-2000"
+
+# # base
+# model:
+#   model_provider: "Huggingface"  # "OpenAI", "Anthropic" or "Huggingface"
+#   model_name: "/mnt/public/shuzhengsi/ppl/models/models--THUDM--LongAlign-7B-64k-base/snapshots/fa28d013fed955d0e573196de081c3025fb3dbe4"
+
