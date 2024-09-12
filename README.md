@@ -24,6 +24,7 @@ Install the requirements with pip: `pip install -r requirements.txt`. For Llama-
 
 ```python
 python compute_hmg_4k.py
+
 python compute_hmg_64k.py
 ```
 
@@ -45,6 +46,7 @@ To calculate the segment-level attention score:
 
 ```python
 sh run_multiprocess_attn.sh
+
 python compute_seg_attn.py
 ```
 
@@ -54,10 +56,11 @@ To calculate the segment-level perplexity score:
 
 ```python
 sh run_multiprocess_ppl.sh
+
 python compute_seg_ppl.py
 ```
 
-The results are stroed in `select/data/`.
+The results are stored in `select/data/`.
 
 To calculate the  Contextual Awareness Score:
 
