@@ -25,7 +25,7 @@ Install the requirements with pip: `pip install -r requirements.txt`. For Llama-
 
 #### Run
 
-```bash
+```python
 python compute_hmg_4k.py
 python compute_hmg_64k.py
 ```
@@ -46,7 +46,7 @@ Install the requirements with pip: `pip install -r requirements.txt`. For Llama-
 
 To calculate the segment-level attention score:
 
-```bash
+```python
 sh run_multiprocess_attn.sh
 python compute_seg_attn.py
 ```
@@ -55,7 +55,7 @@ The results are stored in `select/data/`.
 
 To calculate the segment-level perplexity score:
 
-```bash
+```python
 sh run_multiprocess_ppl.sh
 python compute_seg_ppl.py
 ```
@@ -64,7 +64,7 @@ The results are stroed in `select/data/`.
 
 To calculate the  Contextual Awareness Score:
 
-```bash
+```python
 python compute_cas.py
 ```
 
@@ -78,7 +78,7 @@ You can find the corresponding code in `select/`.
 
 To calculate the final sore:
 
-```bash
+```python
 python rank.py
 ```
 
@@ -94,7 +94,7 @@ Install the requirements with pip: `pip install -r requirements.txt`.
 
 You can download and save the processed data in two different settings through the [Google Drive](https://drive.google.com/drive/folders/1nqP9S__1E7eJSuEy5lzneJHwL3wN6W2X?usp=drive_link) to train the model. Please put the data into `train/data/`. Meanwhile, you can use other data as a source for general instruction data, but please format your data as follows:
 
-```
+```json
 {"messages": 
 	[{"role": "user", "content": "..."}, 
 	{"role": "assistant", "content": "..."}, ...]
@@ -105,7 +105,7 @@ You can download and save the processed data in two different settings through t
 
 Please refer to `train/data_raw.sh`
 
-```
+```python
 # e.g., real-world setting for GATEAU-LLaMA-7B-5K
 
 python pre_tokenize.py --input_long_dir ./data/gateau_long.jsonl  --input_share_dir ./data/sharegpt.jsonl --output_dir ./data/llama/7b-5k-100k --model llama --datanum 5k
@@ -127,7 +127,7 @@ We provide training scripts under `train/scripts/` (e.g., 1k_100k.sh) for LLaMA-
 
 ### LongBench-Chat
 The dataset and evaluation code are available under `train/LongBench_Chat/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator. Run
-```bash
+```python
 python eval.py --model {model_path} --max_length {max_length}
 ```
 `model_path` can either be your local model path or a Hugging Face model path. 
@@ -136,7 +136,7 @@ python eval.py --model {model_path} --max_length {max_length}
 
 The dataset can be found in the original LongBench paper or this [Google Drive](https://drive.google.com/drive/folders/1xVbwiD477k1PAwOuzBZFfRrAO8diigB3?usp=drive_link). Evaluation code are available under `train/LongBench/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator.
 
-```bash
+```python
 python eval.py --model {model_path} --max_length {max_length}
 ```
 
@@ -144,7 +144,7 @@ python eval.py --model {model_path} --max_length {max_length}
 
 You can use this code to get auto-scores of LongBench instead of GPT-4 evaluation. But you need to make sure you have generated the responses for LongBench.
 
-```bash
+```python
 python eval_auto.py --model {model_path} --max_length {max_length}
 ```
 
