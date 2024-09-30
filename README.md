@@ -171,3 +171,15 @@ Here is the full list of models we released:
 |**GATEAU-3k-10k**| [🤗 Link](https://huggingface.co/ssz1111/GATEAU-3k-10k) | Chat model, training on 3k long SFT data from LongAlign and 10k short data from ShareGPT. |
 |**GATEAU-1k-10k**| [🤗 Link](https://huggingface.co/ssz1111/GATEAU-1k-10k) | Chat model, training on 1k long SFT data from LongAlign and 10k short data from ShareGPT. |
 
+A simple demo for deployment of the model:
+```python
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+tokenizer = AutoTokenizer.from_pretrained("ssz1111/GATEAU-1k-10k", trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("ssz1111/GATEAU-1k-10k", torch_dtype=torch.bfloat16, trust_remote_code=True, device_map="auto")
+model = model.eval()
+query = "\n\n Hello."
+response, history = model.chat(tokenizer, query, history=[], max_new_tokens=512, temperature=1)
+print(response)
+```
+
