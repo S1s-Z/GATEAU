@@ -11,15 +11,15 @@ We propose **GATEAU** to identify the influential and high-quality samples enric
 
 ## 🎯 Usage
 
-### Homologous Models’ Guidance (HMG)
+### 📢 Homologous Models’ Guidance (HMG)
 
 You can find the corresponding code in `select/hmg`.
 
-#### Setup
+#### 🔎 Setup
 
 Install the requirements with pip: `pip install -r requirements.txt`. For Llama-based models, we recommend using FlashAttention 2 for optimization and saving GPU memory. Once the setup is complete, you can use the shell scripts to perform different calculations.
 
-#### Run
+#### 🔎 Run
 
 ```python
 python compute_hmg_4k.py
@@ -31,15 +31,15 @@ The results are stored in `select/data/`.
 
 
 
-### Contextual Awareness Measurement (CAM)
+### 📢 Contextual Awareness Measurement (CAM)
 
 You can find the corresponding code in `select/cam/`.
 
-#### Setup
+#### 🔎 Setup
 
 Install the requirements with pip: `pip install -r requirements.txt`. For Llama-based models, we recommend using FlashAttention 2 for optimization and saving GPU memory. Once the setup is complete, you can use the shell scripts to perform different calculations.
 
-#### Run
+#### 🔎 Run
 
 To calculate the segment-level attention score:
 
@@ -71,7 +71,7 @@ The results are stored in `select/data/`.
 
 
 
-### Rank
+### 📢 Rank
 
 You can find the corresponding code in `select/`.
 
@@ -85,7 +85,7 @@ The results are stored in `train/data/gateau_long.jsonl`.
 
 
 
-### Train
+### 📢 Train
 
 You can find the corresponding code in `train`.
 
@@ -100,7 +100,7 @@ You can download and save the processed data in two different settings through t
 }
 ```
 
-#### Data preprocessing
+#### 🔎 Data preprocessing
 
 Please refer to `train/data_raw.sh`
 
@@ -116,7 +116,7 @@ python sort_and_group.py --group_size 8 --train_file ./data/llama/7b-5k-100k
 
 2. We then organize the tokenized data for training.  We use the sorted batching strategy to speed up our training. You should set the `--group_size` parameter to the number of GPUs during training. We recommend using at least 8 80G GPUs for model training, otherwise, the 64k length may incur memory overflow.
 
-#### Training
+#### 🔎 Training
 
 We provide training scripts under `train/scripts/` (e.g., 1k_100k.sh) for LLaMA-2-7B model series. Make sure to adjust `--model_name_or_path`, `--train_file`, and `--output_dir` to match your model path, data path, and output path. For 1k_100k.sh, 1k means the number of used long SFT data, and 100k refers to the number of used short SFT data.
 
@@ -124,14 +124,14 @@ We provide training scripts under `train/scripts/` (e.g., 1k_100k.sh) for LLaMA-
 
 ## 🎲 Evaluation
 
-### LongBench-Chat
+### 🔍 LongBench-Chat
 The dataset and evaluation code are available under `train/LongBench_Chat/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator. Run
 ```python
 python eval.py --model {model_path} --max_length {max_length}
 ```
 `model_path` can either be your local model path or a Hugging Face model path. 
 
-### LongBench
+### 🔍 LongBench
 
 The dataset can be found in the original LongBench paper or this [Google Drive](https://drive.google.com/drive/folders/1xVbwiD477k1PAwOuzBZFfRrAO8diigB3?usp=drive_link). Evaluation code are available under `train/LongBench/`. Remember to configure your OpenAI API key in `eval.py` since we adopt GPT-4 as the evaluator.
 
@@ -149,10 +149,10 @@ python eval_auto.py --model {model_path} --max_length {max_length}
 
 `model_path` can either be your local model path or a Hugging Face model path. 
 
-### Needle-test
+### 🔍 Needle-test
 We also provide the code for evaluating HuggingFace models on the "Needle In A Haystack" test under `train/Needle_test/`.See its [README.md](https://github.com/THUDM/LongAlign/blob/main/Needle_test/README.md) for more information.
 
-### MT-bench
+### 🔍 MT-bench
 
 To reproduce our results on other benchmarks, we refer to the code in [FastChat](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge) for evaluate MT-Bench tasks. Remember to set `--dtype` to `bfloat16`  when you attempt to  generate the response.
 
