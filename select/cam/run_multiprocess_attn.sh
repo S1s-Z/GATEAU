@@ -9,7 +9,8 @@ SINGLE_PPL_BATCH_SIZE=32
 SEED=11
 
 # output settings
-DATA_FILE_PATH=../data/ori_LongAlign.json
+# make sure to make ori_LongALign.json into jsonl format
+DATA_FILE_PATH=../data/ori_LongAlign.jsonl
 ROOT_PATH=../data/attention_final
 
 python ./run_batch_multi_process.py \
