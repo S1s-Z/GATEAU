@@ -9,6 +9,7 @@ SINGLE_PPL_BATCH_SIZE=32
 SEED=11
 
 # output settings
+# make sure to make ori_LongALign.json into jsonl format
 DATA_FILE_PATH=../data/ori_LongAlign.json
 ROOT_PATH=../data/ppl_final
 
