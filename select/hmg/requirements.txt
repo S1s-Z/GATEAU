@@ -9,3 +9,4 @@ tokenizers>=0.13.3
 tqdm
 scikit-learn
 wandb
+xformers
