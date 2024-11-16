@@ -8,9 +8,25 @@ import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 import multiprocessing
-from transformers import LlamaTokenizer, LlamaForCausalLM, AutoTokenizer, AutoModelForCausalLM
-from transformers.models.llama.modeling_llama import LlamaAttention, LlamaFlashAttention2, LlamaSdpaAttention
-
+from transformers import LlamaTokenizer, LlamaForCausalLM, AutoTokenizer, AutoModelForCausalLM,LlamaPreTrainedModel,LlamaModel
+from transformers.models.llama.modeling_llama import LlamaAttention, LlamaFlashAttention2, LlamaSdpaAttention,apply_rotary_pos_emb,LLAMA_INPUTS_DOCSTRING,_CONFIG_FOR_DOC
+from transformers.modeling_outputs import (
+    BaseModelOutputWithPast,
+    CausalLMOutputWithPast,
+    QuestionAnsweringModelOutput,
+    SequenceClassifierOutputWithPast,
+    TokenClassifierOutput,
+) 
+from transformers.cache_utils import Cache, DynamicCache, StaticCache
+from torch import nn
+from transformers.utils import (
+    add_start_docstrings,
+    add_start_docstrings_to_model_forward,
+    is_flash_attn_2_available,
+    is_flash_attn_greater_or_equal_2_10,
+    logging,
+    replace_return_docstrings,
+)
 from torch.nn import CrossEntropyLoss
 from multiprocessing import Process
 import gc
@@ -21,7 +37,7 @@ import xformers
 from xformers.ops.fmha import (
     memory_efficient_attention,
 )
-
+from typing import List, Optional, Tuple, Union
 CHUNK_SIZE = int(os.environ.get("CHUNK_SIZE", 128))  # Default to 128 if not set
 CONTEXT_LENGTH = int(os.environ.get("WINDOW_SIZE", 64000))  # Default to 64000 if not set
 
@@ -73,7 +89,8 @@ class DataProcessor:
             use_fast=False,
             trust_remote_code=True
         )
-        
+        if self.tokenizer.pad_token is None:
+            self.tokenizer.pad_token = self.tokenizer.eos_token
         if hasattr(self.tokenizer, "add_bos_token"): 
             setattr(self.tokenizer, "add_bos_token", False)
         if hasattr(self.tokenizer, "add_eos_token"):
@@ -156,7 +173,6 @@ class DataProcessor:
             self.model.eval()
             inputs = tokenized_data_full['input_ids'].to(self.device) # not sure
             attention_mask = tokenized_data_full['attention_mask'].to(self.device) # not sure\
-            print("cal_attn shape",inputs.shape)
             outputs = self.model(input_ids=inputs,attention_mask=attention_mask, output_attentions=True)
             outputs_attention = outputs['attentions']
         all_chunk_attention_avg = []
@@ -242,7 +258,6 @@ class DataProcessor:
                 if input_file.endswith('.jsonl'):
                     json_data = json.loads(single_data)
                     if 'input' in json_data:
-                        
                         data = json_data['input']
                         response = json_data['response']
                         js_idx = json_data['id']
