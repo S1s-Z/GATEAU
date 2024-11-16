@@ -37,7 +37,15 @@ You can find the corresponding code in `select/cam/`.
 
 #### 🔎 Setup
 
-Install the requirements with pip: `pip install -r requirements.txt`. For Llama-based models, we recommend using FlashAttention 2 for optimization and saving GPU memory. Once the setup is complete, you can use the shell scripts to perform different calculations.
+Install the requirements with pip: `pip install -r requirements.txt`. 
+
+Then bulid the transformers from source:
+
+```bash
+cd transformers && pip install -e .
+```
+
+For Llama-based models, we recommend using FlashAttention 2 for optimization and saving GPU memory. Once the setup is complete, you can use the shell scripts to perform different calculations.
 
 #### 🔎 Run
 
