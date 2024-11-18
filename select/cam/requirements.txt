@@ -3,3 +3,5 @@ tqdm==4.66.1
 numpy==1.26.1
 matplotlib==3.8.0
 datasets==2.15.0
+protobuf
+xformers
