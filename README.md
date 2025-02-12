@@ -1,6 +1,6 @@
 # GATEAU
 
-The code of our paper "GATEAU: Selecting Influential Sample for Long Context Alignment"
+The code of our paper "GATEAU: Selecting Influential Samples for Long Context Alignment"
 
 ## 🧁 Overview
 
