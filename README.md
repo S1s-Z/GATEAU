@@ -171,12 +171,12 @@ Here is the full list of models we released:
 
 |Model|HF Link|Description|
 |---|---|---|
-|**GATEAU-5k-100k**| [🤗 Link](https://huggingface.co/ssz1111/GATEAU-5k-100k) | Chat model, training on 5k long SFT data from LongAlign and 100k short data from ShareGPT. |
-|**GATEAU-3k-100k**| [🤗 Link](https://huggingface.co/ssz1111/GATEAU-3k-100k) | Chat model, training on 3k long SFT data from LongAlign and 100k short data from ShareGPT. |
-|**GATEAU-1k-100k**| [🤗 Link](https://huggingface.co/ssz1111/GATEAU-1k-100k) | Chat model, training on 1k long SFT data from LongAlign and 100k short data from ShareGPT. |
-|**GATEAU-5k-10k**| [🤗 Link](https://huggingface.co/ssz1111/GATEAU-5k-10k) | Chat model, training on 5k long SFT data from LongAlign and 10k short data from ShareGPT. |
-|**GATEAU-3k-10k**| [🤗 Link](https://huggingface.co/ssz1111/GATEAU-3k-10k) | Chat model, training on 3k long SFT data from LongAlign and 10k short data from ShareGPT. |
-|**GATEAU-1k-10k**| [🤗 Link](https://huggingface.co/ssz1111/GATEAU-1k-10k) | Chat model, training on 1k long SFT data from LongAlign and 10k short data from ShareGPT. |
+|**GATEAU-5k-100k**| [🤗](https://huggingface.co/ssz1111/GATEAU-5k-100k) | Chat model, training on 5k long SFT data from LongAlign and 100k short data from ShareGPT. |
+|**GATEAU-3k-100k**| [🤗](https://huggingface.co/ssz1111/GATEAU-3k-100k) | Chat model, training on 3k long SFT data from LongAlign and 100k short data from ShareGPT. |
+|**GATEAU-1k-100k**| [🤗](https://huggingface.co/ssz1111/GATEAU-1k-100k) | Chat model, training on 1k long SFT data from LongAlign and 100k short data from ShareGPT. |
+|**GATEAU-5k-10k**| [🤗](https://huggingface.co/ssz1111/GATEAU-5k-10k) | Chat model, training on 5k long SFT data from LongAlign and 10k short data from ShareGPT. |
+|**GATEAU-3k-10k**| [🤗](https://huggingface.co/ssz1111/GATEAU-3k-10k) | Chat model, training on 3k long SFT data from LongAlign and 10k short data from ShareGPT. |
+|**GATEAU-1k-10k**| [🤗](https://huggingface.co/ssz1111/GATEAU-1k-10k) | Chat model, training on 1k long SFT data from LongAlign and 10k short data from ShareGPT. |
 
 A simple demo for deployment of the model:
 ```python
