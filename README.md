@@ -169,7 +169,7 @@ To reproduce our results on other benchmarks, we refer to the code in [FastChat]
 
 Here is the full list of models we released:
 
-|Model|HF Link|Description|
+|Model|Link|Description|
 |---|---|---|
 |**GATEAU-5k-100k**| [🤗](https://huggingface.co/ssz1111/GATEAU-5k-100k) | Chat model, training on 5k long SFT data from LongAlign and 100k short data from ShareGPT. |
 |**GATEAU-3k-100k**| [🤗](https://huggingface.co/ssz1111/GATEAU-3k-100k) | Chat model, training on 3k long SFT data from LongAlign and 100k short data from ShareGPT. |
