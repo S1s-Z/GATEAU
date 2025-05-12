@@ -190,3 +190,14 @@ response, history = model.chat(tokenizer, query, history=[], max_new_tokens=512,
 print(response)
 ```
 
+## ✍🏻 Citation
+
+```bibtex
+@article{si2024gateau,
+  title={GATEAU: Selecting Influential Sample for Long Context Alignment},
+  author={Si, Shuzheng and Zhao, Haozhe and Chen, Gang and Li, Yunshui and Luo, Kangyang and Lv, Chuancheng and An, Kaikai and Qi, Fanchao and Chang, Baobao and Sun, Maosong},
+  journal={arXiv preprint arXiv:2410.15633},
+  year={2024}
+}
+```
+
